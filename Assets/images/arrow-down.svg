@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="12px" viewBox="0 0 19 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>88DFDD41-86C1-42F3-AD21-4AB6267AD433</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="414" height="65"></rect>
+    </defs>
+    <g id="-Zeplin-Box" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1-Mobile_Rec" transform="translate(-371.000000, -91.000000)">
+            <g id="Group-5" transform="translate(0.000000, 65.000000)">
+                <g id="Bitmap">
+                    <g id="Group-6">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#1B1B1B" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+                <polygon id="Shape" stroke="#D29851" fill="#D29851" fill-rule="nonzero" transform="translate(380.500000, 32.000000) scale(1, -1) rotate(180.000000) translate(-380.500000, -32.000000) " points="389.25762 27 380.5 35.5506744 371.742171 27 371 27.7245608 380.5 37 390 27.7245608"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
