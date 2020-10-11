@@ -3,9 +3,10 @@
 @font-face {font-family: SunSans-Demi; src: url('fonts/Sun\ Sans-\ Demi.ttf'); }
 
 
-body {
+html, body {
     margin: 0;
-    max-width: 100%;
+    overflow-x: hidden;
+    width: 100%;
     background-image: url('images/main\ background.png');
 }
 .top-header {
