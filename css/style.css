@@ -5,6 +5,7 @@
 
 body {
     margin: 0;
+    max-width: 100%;
     background-image: url('images/main\ background.png');
 }
 .top-header {
@@ -45,12 +46,12 @@ label {
     display: block;
     padding: 1em 1em 1em 0;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 767px) {
     .navigation {
         flex-direction: row-reverse;
         justify-content: space-between;
-        padding-right: 25%;
         flex-wrap: wrap;
+        padding-right: 25%;
     }
     label {
         display: block;
@@ -174,7 +175,7 @@ label {
 .main-header {
     height: 100%;
     background: url(images/header-background.png);
-    background-position: center;
+    background-position-x: 63%;
     background-size: cover;
     color: #ffffff;
     position: relative;
@@ -188,9 +189,28 @@ label {
     left: 7.5%;
     font-size: 1.5rem;
     padding: 0;
+    font-family: TrajanPro-Regular;
 }
 .image-side-heading {
     display: none;
+}
+.carousel-navigator {
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 55%;
+    left: 7.5%;
+}
+.carousel-indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 7px;
+    height: 10px;
+    background: rgba(256,256,256,0.3);
+}
+.current {
+    background: rgba(256,256,256,1);
 }
 .dalView {
     position: absolute;
@@ -238,6 +258,7 @@ label {
 .button {
     padding-left: 2em;
     padding-bottom: 1em;
+    white-space: nowrap;
 }
 .button button {
     font-size: 0.875rem;
@@ -275,6 +296,10 @@ label {
         font-weight: normal;
         font-family: SunSans, sans-serif;
         opacity: 0.7;
+    }
+    .carousel-navigator {
+        width: 5%;
+        top: 65%;
     }
     .dalView {
         top: 70%;
@@ -316,8 +341,11 @@ label {
 .heading1, .heading2, .heading3, .heading4 {
     font-family: TrajanPro-Regular, sans-serif;
     font-size: 24px;
-    padding: 40px 0;
+    padding: 40px 0 0 0;
     text-align: center;
+}
+.heading3 {
+    padding: 0;
 }
 .last-stay {
     background: #ffffff;
@@ -327,8 +355,11 @@ label {
     width: 100%;
     display: block;
 }
+.last-stay-details {
+    box-shadow: 0 11px 12px 0 rgba(0, 0, 0, 0.05);
+}
 .row1 {
-    padding: 25px;
+    padding: 25px 25px 0 25px;
 }
 .taj-umaid-bhavan {
     font-family: TrajanPro-Regular, sans-serif;
@@ -348,13 +379,15 @@ label {
     font-size: 12px;
 }
 .row2 {
-    padding: 0 25px;
+    padding: 20px 25px;
 }
 .how-was-your-stay {
     color: #d29851;
     font-size: 14px;
     letter-spacing: 1.5px;
-    padding: 25px 0;
+    margin-top: 25px;
+    padding: 15px 0;
+    border-top: 1px solid rgba(151,151,151,0.4);
 }
 .how-was-your-stay i {
     font-size: 1.5em;
@@ -362,8 +395,7 @@ label {
 .earnings {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 12px 20px;
+    padding: 12px 10px;
     font-family: SunSans, sans-serif;
     font-size: 18px;
     background-color: #f2f2f2;
@@ -373,9 +405,10 @@ label {
     padding-right: 10px;
 }
 .earnings-text::after{
-    content: "+100 Epicure";
-    padding-left: 1em;
-    border-left: 1px dotted #323232;
+    margin-left: 10px;
+    content: "+100";
+    padding-left: 0.5em;
+    border-left: 1px solid #979797;
 }
 .view-point-breakup {
     display: flex;
@@ -400,9 +433,24 @@ label {
 .fa-print {
     opacity: 0.75;
 }
-.question-mark {
-    padding-right: 20px;
+@media only screen and (max-width: 350px) {
+    .taj-umaid-bhavan {
+        font-size: 18px;
+    }
+    .how-was-your-stay {
+        font-size: 13px;
+        letter-spacing: 0;
+    }
+    .view-button button {
+        padding: 10px;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+    .earnings-text::after {
+        padding: 0;
+    }
 }
+
 @media only screen and (min-width: 768px) {
     .heading1, .heading2, .heading3{
         margin: 0 6%;
@@ -413,6 +461,9 @@ label {
         display: flex;
         margin: 0 6%;
         height: auto;
+    }
+    .last-stay-image {
+        flex: 50%;
     }
     .last-stay-image img {
         height: 100%;
@@ -428,24 +479,27 @@ label {
     .stay-time {
         font-size: 15px;
     }
+    .row2 {
+        padding-bottom: 2rem;
+    }
     .how-was-your-stay {
-        width: 15em;
         padding: 0.5em 0;
         margin: 0.5em 0 0;
         border-top: 1px solid #979797;
         border-bottom: 1px solid #979797;
-        font-size: 15px;
+        font-size: 13px;
     }
     .earnings {
         margin: 0.5em 0;
         font-size: 15px;
     }
     .earnings-text::after {
+        content: "+100";
         padding: 0 10px;
         margin-left: 10px;
         border-left: 1px solid #979797;
     }
-    .row2 i, .question-mark {
+    .question-mark {
         display: none;
     }
     .print-invoice, .help {
@@ -457,17 +511,18 @@ label {
         letter-spacing: 1.75px;
         display: flex;
     }
-    .view-button {
-        padding: 10px;
-    }
+    
     .view-button button {
-        padding: 10px;
-        font-size: 12px;
+        padding: 5px;
+        font-size: 10px;
         letter-spacing: 1px;
         font-family: SunSans-Demi, sans-serif;
     }
+    .print {
+        display: none;
+    }
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1200px) {
     .heading1, .heading2, .heading3{
         margin: 0 12%;
         text-align: left;
@@ -499,42 +554,73 @@ label {
         font-size: 15px;
     }
     .how-was-your-stay {
-        width: 21em;
+        width: 70%;
         padding: 1em 0;
         margin: 0 0 0 0;
         border-top: 1px solid #979797;
         border-bottom: 1px solid #979797;
-        font-size: 20px;
+        font-size: 16px;
     }
     .earnings {
-        margin: 1em 0;
+        width: 90%;
+        margin: 6.5em 0 0 0;
         font-size: 20px;
     }
     .earnings-text::after {
+        content: "+100 Epicure";
         padding: 0 10px;
         margin-left: 10px;
         border-left: 1px solid #979797;
     }
-    .row2 i, .question-mark {
+    .print, .question-mark {
         display: none;
     }
     .print-invoice, .help {
         display: block;
     }
     .view-point-breakup {
-        margin-bottom: 0;
-    }
-    .view-point-breakup {
+        width: 93%;
+        justify-content: space-between;
+        margin: 0;
         font-size: 14px;
         letter-spacing: 1.75px;
     }
+    .view-button button {
+        font-size: 14px;
+        letter-spacing: 1.75px;
+        padding: 10px 10px;
+    }
 }
+
+
 .slideshow {
     margin: 2em;
-    height: 100%;
     position: relative;
     background: none;
+    overflow: hidden;
+    height: 100%;
 }
+@media only screen and (min-width: 320px) and (max-width: 374px){
+    .slideshow {
+        height: 80%;
+    }
+}
+@media only screen and (min-width: 375px) and (max-width: 450px){
+    .slideshow {
+        height: 90%;
+    }
+}
+@media only screen and (min-width: 451px) and (max-width: 600px){
+    .slideshow {
+        height: 800px
+    }
+}
+@media only screen and (min-width: 601px) and (max-width: 767px){
+    .slideshow {
+        height: 950px
+    }
+}
+
 .slides {
     position: absolute;
     top: 0;
@@ -544,16 +630,15 @@ label {
 }
 .slides-heading {
     background-color: #ffffff;
-}
-.details {
-    background-color: #ffffff;
-}
-.slides-heading {
     font-family: SunSans, sans-serif;
     font-size: 16px;
     color: #1b1b1b;
     text-align: center;
     padding: 1em 1.7em;
+}
+.details {
+    background-color: #ffffff;
+    box-shadow: 0 11px 12px 0 rgba(0, 0, 0, 0.05);
 }
 .image img {
     width: 100%;
@@ -566,12 +651,18 @@ label {
     font-family: SunSans, sans-serif;
     font-size: 22px;
     padding: 0  1em 1em 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .address {
     font-family: SunSans, sans-serif;
     font-size: 15px;
     color: #9b9b9b;
     padding: 0 1.5em 1.5em 1.5em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .slides-view-details {
     display: flex;
@@ -594,16 +685,14 @@ label {
     border: none;
     cursor: pointer;
     color: #d29851;
+    background-color: lemonchiffon;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
 }
 .right-button, .right-button1 {
-    left: 100%;
-}
-.left-button, .left-button1 {
-    left: -25px
+    left: 93%;
 }
 
 .earnings-calculator {
@@ -641,7 +730,7 @@ label {
         justify-content: space-between;
         background-color: #e6e6e6;
         font-size: 16px;
-        margin: 0 4em 0 4em;
+        margin: 20px;
         border-left: 0.5em solid #d39851;
     }
     .place {
@@ -672,7 +761,7 @@ label {
         height: 400px;
     }
     .slides {
-        width: 31%;
+        width: 32%;
         padding-left: 10px;
     }
     .right-button, .left-button, .left-button1, .right-button1 {
@@ -707,9 +796,8 @@ label {
         display: flex;
         justify-content: space-between;
         font-family: SunSans, sans-serif;
-        justify-content: space-between;
         padding: 0 1em 1em 1em;
-        font-size: 13px;
+        font-size: 14px;
     }
     .slides-view-details button {
         font-size: 14px;
@@ -725,8 +813,12 @@ label {
         height: 450px;
         margin: 3%, 12%;
     }
+    .carousel {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
     .slides {
-        width: 29%;
         padding: 0 15px;
         background: rgba(0, 0, 0, 0);
     }
@@ -757,6 +849,8 @@ label {
 }
 .voucher-image {
     flex: 35%;
+}
+.semicircle {
 }
 .voucher-details {
     flex: 65%;
@@ -810,18 +904,26 @@ label {
     color: #9b9b9b;
     padding-bottom: 2em;
 }
+
 @media only screen and (min-width: 1024px) {
-    .heading4 {
-        padding-top: 0;
-    }
     .voucher {
         display: flex;
     }
     .heading4 {
-        display: block;
+        display: flex;
+        justify-content: space-between;
         margin: 2em 12% 0 12%;
         text-align: left;
         padding: 60px 0 20px 0;
+    }
+    .view-vouchers {
+        background-color: transparent;
+        border: 1px solid #c7904c;
+        font-family: SunSans-Demi, sans-serif;
+        font-size: 14px;
+        letter-spacing: 1.75px;
+        color: #c7904c;
+        text-align: center;
     }
     .cut-out {
         display: flex;
@@ -837,12 +939,16 @@ label {
 
 /* Footer */
 footer {
-    background-color: #efeeee;
-    padding: 2.5em 2.5em;
+    padding: 2.5em 3.5em;
     margin-top: 100px;
+    background-color: #efeeee;
 }
 .footer-nav-desktop {
     display: none;
+}
+.footer-image {
+    background-color: #efeeee;
+    padding: 2.5em 0;
 }
 .footer-nav {
     padding: 2.5em 0;
@@ -851,17 +957,22 @@ footer {
     font-size: 16px;
     font-family: SunSans, sans-serif;
     line-height: 1.5;
-}
-.col_2 {
-    padding-right: 15px;
-}
-.join-our-newsletter {
-    font-size: 18px;
+    background-color: #efeeee;
+    
     color: #1b1b1b;
 }
+.join-our-newsletter {
+    padding: 2.5em 0;
+    font-size: 18px;
+    color: #1b1b1b;
+    background-color: #efeeee;
+    font-family: SunSans, sans-serif;
+}
 .email {
+    padding: 2.5em 2.5em;
     display: flex;
     padding: 1.5em 0;
+    background-color: #efeeee;
 }
 .email input {
     flex: 60%;
@@ -871,25 +982,53 @@ footer {
     font-family: SunSans, sans-serif;
 }
 .email button {
-    padding: 0.75em 2em;
+    padding: 0.75em 1em;
     border: none;
     font-size: 14px;
     font-family: SunSans-Demi;
     background-color: #d29851;
     color: #ffffff;
+    letter-spacing: 1.75px;
 }
 .join-our-newsletter img {
     padding-right: 5px;
+}
+.col_1, .col_2 {
+    display: flex;
+    flex-direction: column;
+}
+footer a {
+    text-decoration: none;
+    color: #1b1b1b;
 }
 @media only screen and (min-width: 768px) {
     footer {
         margin-top: 50px;
     }   
+    .footer-nav {
+        font-size: 24px;
+        justify-content: space-between;
+        margin: 0 50px;
+    }
+    .footer-image img {
+        width: 50px;
+    }
+    .join-our-newsletter {
+        font-size: 24px;
+        margin: 0 50px;
+    }
+    .email {
+        font-size: 24px;
+        width: 80%;
+        text-align: center;
+    }
 }
 @media only screen and (min-width: 1024px) {
     footer {
         display: flex;
         justify-content: space-around;
+        background-color: #efeeee;
+        padding-top: 50px;
     }
     .footer-nav {
         display: none;
@@ -899,9 +1038,20 @@ footer {
         padding: 2.5em 0;
         display: flex;
         justify-content: space-between;
-        font-size: 16px;
+        font-size: 17px;
         font-family: SunSans, sans-serif;
         line-height: 1.5;
+        letter-spacing: 1px;
+        background-color: #efeeee;
+    }
+    .col1, .col2, .col3 {
+        display: flex;
+        flex-direction: column;
+    }
+    footer a {
+        text-decoration: none;
+        color: #1b1b1b;
+
     }
     .join-our-newsletter {
         width: 30%;
